@@ -16,7 +16,7 @@ function CustomerForm() {
   // Fetch customer data if ID is present
   useEffect(() => {
     if (id) {
-      axios.get(`http://127.0.0.1:5000/customers/${id}`)
+      axios.get(`https://back-end-e-commerce-api.onrender.com/customers/${id}`)
         .then(response => setCustomerData(response.data))
         .catch(error => {
           console.error('Error fetching customer data:', error);
@@ -49,8 +49,8 @@ function CustomerForm() {
       setIsSubmitting(true);
       setApiError(null);
       const apiUrl = id
-        ? `http://127.0.0.1:5000/customers/${id}`
-        : 'http://127.0.0.1:5000/customers';
+        ? `https://back-end-e-commerce-api.onrender.com/customers/${id}`
+        : 'https://back-end-e-commerce-api.onrender.com/customers';
       const method = id ? axios.put : axios.post;
 
       try {

@@ -16,7 +16,7 @@ function ProductForm() {
   // Fetch product data if ID is present
   useEffect(() => {
     if (id) {
-      axios.get(`http://127.0.0.1:5000/products/${id}`)
+      axios.get(`https://back-end-e-commerce-api.onrender.com/products/${id}`)
         .then(response => setProductData(response.data))
         .catch(error => {
           console.error('Error fetching product data:', error);
@@ -48,8 +48,8 @@ function ProductForm() {
       setIsSubmitting(true);
       setApiError(null);
       const apiUrl = id
-        ? `http://127.0.0.1:5000/products/${id}`
-        : 'http://127.0.0.1:5000/products';
+        ? `https://back-end-e-commerce-api.onrender.com/products/${id}`
+        : 'https://back-end-e-commerce-api.onrender.com/products';
       const method = id ? axios.put : axios.post;
 
       try {

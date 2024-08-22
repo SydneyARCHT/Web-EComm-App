@@ -15,7 +15,7 @@ function OrderForm() {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://127.0.0.1:5000/orders/${id}`)
+      axios.get(`https://back-end-e-commerce-api.onrender.com/orders/${id}`)
         .then(response => {
           const { customer_id, date, products } = response.data;
           setOrderData({ customer_id, date, products: products.join(', ') });
@@ -53,8 +53,8 @@ function OrderForm() {
       setIsSubmitting(true);
       setApiError(null);
       const apiUrl = id
-        ? `http://127.0.0.1:5000/orders/${id}`
-        : 'http://127.0.0.1:5000/orders';
+        ? `https://back-end-e-commerce-api.onrender.com/${id}`
+        : 'https://back-end-e-commerce-api.onrender.com/orders';
       const method = id ? axios.put : axios.post;
 
       try {

@@ -11,7 +11,7 @@ const OrderList = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/orders');
+      const response = await axios.get('https://back-end-e-commerce-api.onrender.com/orders');
       setOrders(response.data);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -25,7 +25,7 @@ const OrderList = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://127.0.0.1:5000/orders/${id}`);
+      await axios.delete(`https://back-end-e-commerce-api.onrender.com/orders/${id}`);
       fetchOrders(); 
     } catch (error) {
       console.error(`Error deleting order: ${error}`);

@@ -11,7 +11,7 @@ const ProductList = () => {
   // Fetch product function
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/products'); 
+      const response = await axios.get('https://back-end-e-commerce-api.onrender.com/products'); 
       setProducts(response.data)
     } catch (error)  {
       console.log("Error fetching products:", error)
@@ -26,7 +26,7 @@ const ProductList = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://127.0.0.1:5000/products/${id}`)
+      await axios.delete(`https://back-end-e-commerce-api.onrender.com/products/${id}`)
       fetchProducts(); 
     } catch (error) {
       console.error(`Error deleting product: ${error}`);

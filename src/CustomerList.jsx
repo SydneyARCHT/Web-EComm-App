@@ -11,7 +11,7 @@ const CustomerList = () => {
 
   const fetchCustomers = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/customers');
+      const response = await axios.get('https://back-end-e-commerce-api.onrender.com/customers');
       setCustomers(response.data);
     } catch (error) {
       console.error("Error fetching customers:", error);
@@ -25,7 +25,7 @@ const CustomerList = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5000/customers/${id}`);
+      await axios.delete(`https://back-end-e-commerce-api.onrender.com/customers/${id}`);
       fetchCustomers(); 
     } catch (error) {
       console.error(`Error deleting customer: ${error}`);
